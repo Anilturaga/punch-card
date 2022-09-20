@@ -1,19 +1,10 @@
 name: Punch card automation
-env: # Or as an environment variable
-      URL: ${{ secrets.URL }}
-      USR: ${{ secrets.USR }}
-      PWD: ${{ secrets.PWD }}
 on:
   push:
       branches:
         - main
   schedule:
-      # Monday to Friday
-      #! Add exception for public holidays
-      # UTC 3:30 AM(IST 9AM)
-      - cron: '30 3 * * 1-5'
-      # UTC 12:30 AM(IST 6PM)
-      - cron: '30 9 * * 1-5'
+      - cron: '30 3,9 * * 1-5'
 jobs:
   test:
     timeout-minutes: 10
@@ -29,6 +20,11 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Run Playwright tests
         run: npx playwright test
+        env: # Or as an environment variable
+          URL: ${{ secrets.URL }}
+          USR: ${{ secrets.USR }}
+          PWD: ${{ secrets.PWD }}
+
       - uses: actions/upload-artifact@v2
         if: always()
         with:
