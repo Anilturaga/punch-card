@@ -1,10 +1,10 @@
 name: Punch card automation
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   schedule:
-    - cron: "30 3,9 * * 1-5"
+    - cron: "30 3,12 * * 1-5"
 jobs:
   test:
     timeout-minutes: 10
@@ -24,9 +24,9 @@ jobs:
           URL: ${{ secrets.URL }}
           USR: ${{ secrets.USR }}
           PASS: ${{ secrets.PASS }}
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 3
+      # - uses: actions/upload-artifact@v2
+      #   if: always()
+      #   with:
+      #     name: playwright-report
+      #     path: playwright-report/
+      #     retention-days: 3
