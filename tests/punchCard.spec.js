@@ -14,7 +14,9 @@ test("PunchCard", async ({ page }) => {
   await page.click("text=Log in");
   console.log("Logging in");
   var d = new Date();
-  console.log("Hours: " + d.getHours());
+  // print date & time in YYYY-MM-DD HH:MM:SS format
+  console.log(d.toLocaleString());
+  // console.log("Hours: " + d.getHours());
   if (d.getHours()+5 < 12) {
     await page.click("text=Sign In");
   } else {
