@@ -12,10 +12,10 @@ test("PunchCard", async ({ page }) => {
 
   await new Promise(r => setTimeout(r, 1000)); // hard wait for 2000ms
   await page.click("text=Log in");
-
+  console.log("Logging in");
   var d = new Date();
-
-  if (d.getHours() < 12) {
+  console.log("Hours: " + d.getHours());
+  if (d.getHours()+5 < 12) {
     await page.click("text=Sign In");
   } else {
     await page.click("text=Sign Out");
