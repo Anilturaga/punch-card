@@ -17,6 +17,8 @@ test("PunchCard", async ({ page }) => {
   // print date & time in YYYY-MM-DD HH:MM:SS format
   console.log(d.toLocaleString());
   // console.log("Hours: " + d.getHours());
+  
+  await page.waitForURL('https://mindgraphtechnologies.greythr.com/v3/portal/ess/home');
   if (d.getHours()+5 < 12) {
     console.log("Morning");
     await page.click("text=Sign In");
