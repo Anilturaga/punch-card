@@ -22,6 +22,8 @@ test("PunchCard", async ({ page }) => {
     await page.click("text=Sign In");
   } else {
     console.log("Afternoon");
+    const url=await page.url();
+    console.log(url);
     await page.click("text=Sign Out");
   }
   console.log("Done");
