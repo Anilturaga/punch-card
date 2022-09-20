@@ -23,7 +23,7 @@ jobs:
         env: # Or as an environment variable
           URL: ${{ secrets.URL }}
           USR: ${{ secrets.USR }}
-          PWD: ${{ secrets.PWD }}
+          PASS: ${{ secrets.PASS }}
       - uses: actions/upload-artifact@v2
         if: always()
         with:

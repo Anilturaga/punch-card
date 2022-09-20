@@ -4,13 +4,13 @@ const { test, expect } = require("@playwright/test");
 test("PunchCard", async ({ page }) => {
   await page.goto(process.env.URL);
   console.log("PunchCard");
-  console.log(process.env.URL.length, process.env.USR.length, process.env.PWD.length);
-  const pwdr = process.env.PWD.replace("@", "aa");
-  console.log(pwdr);
+  console.log(process.env.URL.length, process.env.USR.length, process.env.PASS.length);
+  const PASSr = process.env.PASS.replace("@", "aa");
+  console.log(PASSr);
   // Expect a title "to contain" a substring.
   await page.locator("#username").fill(process.env.USR);
   // await new Promise(r => setTimeout(r, 2000)); // hard wait for 2000ms
-  await page.locator("#password").fill(process.env.PWD);
+  await page.locator("#password").fill(process.env.PASS);
 
   await new Promise(r => setTimeout(r, 1000)); // hard wait for 2000ms
   await page.click("text=Log in");
