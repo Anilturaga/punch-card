@@ -4,7 +4,7 @@ const { test, expect } = require("@playwright/test");
 test("PunchCard", async ({ page }) => {
   await page.goto(process.env.URL);
   console.log("PunchCard");
-  console.log(process.env.URL.length);
+  console.log(process.env.URL.length, process.env.USR.length, process.env.PWD.length);
   // Expect a title "to contain" a substring.
   await page.locator("#username").fill(process.env.USR);
   // await new Promise(r => setTimeout(r, 2000)); // hard wait for 2000ms
@@ -18,7 +18,7 @@ test("PunchCard", async ({ page }) => {
   console.log(d.toLocaleString());
   // console.log("Hours: " + d.getHours());
   
-  await page.waitForURL('https://mindgraphtechnologies.greythr.com/v3/portal/ess/home');
+  // await page.waitForURL('process.env.URL');
   if (d.getHours()+5 < 12) {
     console.log("Morning");
     await page.click("text=Sign In");
