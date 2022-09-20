@@ -4,6 +4,9 @@ env: # Or as an environment variable
       USR: ${{ secrets.USR }}
       PWD: ${{ secrets.PWD }}
 on:
+  push:
+      branches:
+        - main
   schedule:
       # Monday to Friday
       #! Add exception for public holidays
