@@ -1,0 +1,16 @@
+{
+  "name": "punch-card",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.23.4"
+  },
+  "dependencies": {
+    "open": "^8.4.0"
+  }
+}
