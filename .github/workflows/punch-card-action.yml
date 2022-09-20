@@ -1,10 +1,10 @@
 name: Punch card automation
 on:
   push:
-      branches:
-        - main
+    branches:
+      - main
   schedule:
-      - cron: '30 3,9 * * 1-5'
+    - cron: "30 3,9 * * 1-5"
 jobs:
   test:
     timeout-minutes: 10
@@ -24,7 +24,6 @@ jobs:
           URL: ${{ secrets.URL }}
           USR: ${{ secrets.USR }}
           PWD: ${{ secrets.PWD }}
-
       - uses: actions/upload-artifact@v2
         if: always()
         with:
