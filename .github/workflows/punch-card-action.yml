@@ -1,10 +1,10 @@
 name: Punch card automation
 on:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   schedule:
-    - cron: "30 3,19 * * 1,2,3,4,5"
+    - cron: "3 3,15 * * 1,2,3,4,5"
 jobs:
   test:
     timeout-minutes: 10
