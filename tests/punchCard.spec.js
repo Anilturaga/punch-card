@@ -18,8 +18,11 @@ test("PunchCard", async ({ page }) => {
   console.log(d.toLocaleString());
   // console.log("Hours: " + d.getHours());
   if (d.getHours()+5 < 12) {
+    console.log("Morning");
     await page.click("text=Sign In");
   } else {
+    console.log("Afternoon");
     await page.click("text=Sign Out");
   }
+  console.log("Done");
 });
