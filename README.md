@@ -3,6 +3,7 @@
 
 
 Logs into the portal twice a day to sign in and out respectively.
+
 ##Tech stack
 1. Playwright - Browser automation
 2. Github actions - Scheduling
