@@ -2,7 +2,7 @@ name: Punch card automation
 on:
   schedule:
   # 7 3,15 * * 1,2,3,4,5
-    - cron: "0 3,10 * * 1,2,3,4,5"
+    - cron: "0 4,14 * * 1,2,3,4,5"
 jobs:
   test:
     timeout-minutes: 5
